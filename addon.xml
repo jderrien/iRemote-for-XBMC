@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+  id="webinterface.iremote"
+  version="0.2"
+  name="iRemote"
+  provider-name="Ishiro">
+  <requires>
+    <import addon="xbmc.gui" version="2.11"/>
+  </requires>
+  <extension 
+    point="xbmc.gui.webinterfaces"/>
+  <extension point="xbmc.addon.metadata">
+    <summary>iRemote for XBMC</summary>
+    <description>iRemote for XBMC is just a simple webapp to control XBMC over HTTP using your iPhone.</description>
+    <platform>all</platform>
+  </extension>
+</addon>

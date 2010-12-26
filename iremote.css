@@ -1,0 +1,250 @@
+/*
+iRemote for XBMC
+Copyright 2010 Furya-creations.net
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*   General   */
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: Helvetica;
+  height: 0; /* strange bug fix */
+  background: #000;
+}
+
+a, map {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.hidden { display: none; }
+
+header {
+  display: block;
+  position: relative;
+  height: 44px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAsCAMAAACT+SJTAAAARVBMVEWFhYVjY2NhYWFcXFxYWFhUVFRRUVFMTExKSkpGRkZCQkI+Pj47Ozs5OTk1NTUxMTEvLy8qKiopKSkmJiYiIiIgICAAAAAZ+tVAAAAAIUlEQVQI12NgYGBkYmBiYmKEQgQbwmJgYkJhEQP/MjEDABbiAWt//crWAAAAAElFTkSuQmCC);
+  background-repeat: repeat-x;
+}
+
+header h1 {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 150px;
+  height: 44px;
+  margin: 0 0 0 -75px;
+  padding: 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Sections */
+section#add-to-homescreen,
+section#actions,
+section#controller {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+section#add-to-homescreen,
+section#actions {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAABAgMAAABvZVxdAAAACVBMVEXL0tjFzNTFzNI55ZMUAAAAC0lEQVQI12MIdQAAAO0AltsqZ+0AAAAASUVORK5CYII=);
+}
+
+/* Add to homescreen */
+section#add-to-homescreen h1 {
+  margin: 15px 8px 15px 8px;
+  padding: 0;
+  color: #4c596e;
+  font-size: 12pt;
+  text-shadow: rgba(255, 255, 255, 1) 0px 1px 0;
+}
+
+section#add-to-homescreen p {
+  margin: 10px 8px 10px 8px;
+  color: #4c596e;
+  font-size: 10pt;
+  text-shadow: rgba(255, 255, 255, 1) 0px 1px 0;
+}
+
+section#add-to-homescreen p.add {
+  position: absolute;
+  left: 22px;
+  bottom: 3px;
+  margin: 0;
+  padding-bottom: 5px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAMAAACgjTZZAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP/AOW3MEoAAAAZSURBVAjXY2CAA0Y4zQhhMoJYjGAGmAUhAAFeABWDakZMAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+  background-position: 50% bottom;
+}
+section#add-to-homescreen p.add span {
+  display: block;
+  padding: 8px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #000;
+}
+
+/* Nav */
+header nav {
+  display: block;
+  position: absolute;
+  
+}
+header nav a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  font-size: 0.5em;
+  background: url('images/nav.png') no-repeat;
+}
+
+section#controller header nav { top: 7px; right: 6px; width: 30px; height: 30px; }
+section#controller header nav a { background-position: 0 -34px; }
+
+section#actions header nav { top: 7px; left: 5px; width: 42px; height: 30px; }
+section#actions header nav a { background-position: 0 0; }
+
+/* Transitions */
+section.slideToLeft,
+section.slideToRight,
+section:target {
+	-webkit-transition-duration: 500ms;
+  -webkit-transition-property: -webkit-transform;
+}
+section.slideToLeft  { -webkit-transform: translateX(-100%); -moz-transform: translateX(-100%); }
+section.slideToRight { -webkit-transform: translateX(100%); -moz-transform: translateX(100%); }
+section:target { z-index: 1; display: block; -webkit-transform: translateX(0%); -moz-transform: translateX(0%); }
+
+
+/*   Controller   */
+section#controller {
+  background-color: #000;
+  background-image: url('images/controller-background.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+#controller_img {
+  position: absolute;
+  top: 96px;
+  left: 40px;
+  border: 0;
+}
+
+ul#controller_bar {
+  position: absolute;
+  bottom: 36px;
+  left: 16px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background: url('images/controller-bar.png') no-repeat 0 0;
+}
+
+ul#controller_bar li {
+  display: block;
+  float: left;
+  height: 39px;
+}
+li#back { width: 56px; }
+li#rewind { width: 49px; margin-left: 2px; }
+li#play { width: 66px; margin-left: 2px; }
+li#stop { width: 57px; margin-left: 2px; }
+li#forward { width: 51px; margin-left: 2px; }
+
+ul#controller_bar li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  font-size: 0.5em;
+}
+
+
+/*   Actions   */
+ul.iphone_ui_list {
+  position: relative;
+  margin: 14px 9px 14px 9px;
+  padding: 0;
+  border: 1px solid #999;
+  border-radius: 10px;
+  background: #fff;
+  list-style-type: none;
+}
+
+ul.iphone_ui_list li {
+  height: 43px;
+  border-bottom: 1px solid #999;
+}
+ul.iphone_ui_list li:last-child {
+  border-bottom: 0;
+}
+
+ul.iphone_ui_list li a {
+  display: block;
+  margin: 0;
+  padding: 12px 0 11px 47px;
+  color: #000;
+  text-decoration: none;
+  font-size: 13pt;
+  font-weight: bold;
+  background: url('images/action_list_icons.png') no-repeat;
+}
+
+a#watched { background-position: 7px 7px; }
+a#media_info { background-position: 7px -37px; }
+a#context_menu { background-position: 7px -80px; }
+a#exit { background-position: 7px -122px; }
+a#shutdown { background-position: 7px -166px; }
+
+/* landscape mode */
+body.landscape section#controller {
+  background-image: url('images/controller-background-ls.png');
+}
+
+body.landscape section#controller header {
+ z-index: 1;
+ border-bottom: 4px solid #333;
+}
+
+body.landscape #controller_img {
+  position: absolute;
+  top: 35px;
+  left: 118px;
+  border: 0;
+}
+
+body.landscape ul#controller_bar {
+  top: 250px;
+  left: 90px;
+  border: 4px solid #3d3d3d;
+  border-radius: 15px;
+}
