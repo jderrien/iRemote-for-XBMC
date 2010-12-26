@@ -1,2 +1,3 @@
 0.2
 - Added : Compatibility with Dharma addons system
+- Fixed : Alternative keyboard.xml removed
