@@ -1,5 +1,5 @@
 0.2.1
-- Added : Splash screen
+- Added : Splash screen on app startup
 
 0.2
 - Added : Compatibility with Dharma addons system
