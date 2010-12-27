@@ -7,6 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link rel="apple-touch-icon" href="images/app-icon.png" />
+  <link rel="apple-touch-startup-image" href="images/app-startup.png">
   <link rel="stylesheet" type="text/css" href="iremote.css" media="screen" />
 </head>
 <body>
@@ -32,9 +33,9 @@
     <p>Welcome, you have successfully installed the remote !</p>
     <p class="add"><span>To use it, add this page to your homescreen</span></p>
   </section>
-  <section id="controller" class="slideToLeft">
+  <section id="controller" class="">
     <header>
-      <h1>XBMC</h1>
+      <h1>iRemote</h1>
       <nav><a href="#actions" id="to_actions" onclick="iPhoneUI.transition(this);">Action List</a></nav>
     </header>
     <img src="images/controller-cross.png" width="237" height="237" id="controller_img" usemap="#controller_map" />
@@ -48,7 +49,7 @@
   </section>
   <section id="actions" class="slideToRight">
     <header>
-      <h1>XBMC</h1>
+      <h1>iRemote</h1>
       <nav><a href="#controller" id="to_controller" onclick="iPhoneUI.transition(this,true);">Controller</a></nav>
     </header>
     <ul class="iphone_ui_list">
