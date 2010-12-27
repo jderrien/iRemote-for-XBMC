@@ -120,15 +120,15 @@ var iPhoneUI = {
       else {
         window.location = window.location+'#'+ anchor
       }
-    
-      // We let section:target CSS selector do the job
-      //document.getElementById(anchor).className = '';
-    
-      // But we need to hide other sections manually
+      
+      // Add / Remove .hidden class, also see :target into css file
       var sections = document.getElementsByTagName('section');
       for(var i=0, j=sections.length; i<j; i++) {
         if(sections[i].id!=anchor) {
           addClass(sections[i], 'hidden');
+        }
+        else {
+          removeClass(sections[i], 'hidden');
         }
       }
     }
