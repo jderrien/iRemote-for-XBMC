@@ -17,17 +17,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 /*   General   */
+* { -webkit-user-select: none; }
+
 body {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   font-family: Helvetica;
-  height: 0; /* strange bug fix */
+  /*height: 0;*/ /* strange bug fix */
   background: #000;
 }
 
 a, map {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+p {
+  margin: 10px 8px 10px 8px;
+  color: #4c596e;
+  font-size: 10pt;
+  text-shadow: rgba(255, 255, 255, 1) 0px 1px 0;
 }
 
 .hidden { display: none; }
@@ -71,6 +80,8 @@ section#controller {
   border: 0;
 }
 
+section#controller { height: 100%; }
+
 section#add-to-homescreen,
 section#actions {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAABAgMAAABvZVxdAAAACVBMVEXL0tjFzNTFzNI55ZMUAAAAC0lEQVQI12MIdQAAAO0AltsqZ+0AAAAASUVORK5CYII=);
@@ -85,19 +96,14 @@ section#add-to-homescreen h1 {
   text-shadow: rgba(255, 255, 255, 1) 0px 1px 0;
 }
 
-section#add-to-homescreen p {
-  margin: 10px 8px 10px 8px;
-  color: #4c596e;
-  font-size: 10pt;
-  text-shadow: rgba(255, 255, 255, 1) 0px 1px 0;
-}
-
 section#add-to-homescreen p.add {
   position: absolute;
   left: 22px;
   bottom: 3px;
   margin: 0;
   padding-bottom: 5px;
+  text-shadow: none;
+  font-size: 10pt;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAMAAACgjTZZAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP/AOW3MEoAAAAZSURBVAjXY2CAA0Y4zQhhMoJYjGAGmAUhAAFeABWDakZMAAAAAElFTkSuQmCC);
   background-repeat: no-repeat;
   background-position: 50% bottom;
@@ -158,6 +164,13 @@ section#controller {
   border: 0;
 }
 
+#gestures_logo {
+  width: 100%;
+  height: 80%;
+  z-index: -1;
+  background: url('images/controller-gestures-logo.png') no-repeat center center;
+}
+
 ul#controller_bar {
   position: absolute;
   bottom: 36px;
@@ -201,29 +214,55 @@ ul.iphone_ui_list {
 }
 
 ul.iphone_ui_list li {
+  clear: both;
   height: 43px;
+  font-size: 13pt;
+  font-weight: bold;
   border-bottom: 1px solid #999;
+  background: url('images/action_list_icons.png') no-repeat;
 }
 ul.iphone_ui_list li:last-child {
   border-bottom: 0;
 }
 
-ul.iphone_ui_list li a {
+ul.iphone_ui_list li a,
+ul.iphone_ui_list li span.label {
   display: block;
   margin: 0;
-  padding: 12px 0 11px 47px;
+  padding: 11px 0 11px 47px;
   color: #000;
-  text-decoration: none;
-  font-size: 13pt;
-  font-weight: bold;
-  background: url('images/action_list_icons.png') no-repeat;
+  text-decoration: none;  
 }
 
-a#watched { background-position: 7px 7px; }
-a#media_info { background-position: 7px -37px; }
-a#context_menu { background-position: 7px -80px; }
-a#exit { background-position: 7px -122px; }
-a#shutdown { background-position: 7px -166px; }
+li#watched { background-position: 7px 7px; }
+li#media_info { background-position: 7px -37px; }
+li#context_menu { background-position: 7px -80px; }
+li#exit { background-position: 7px -122px; }
+li#shutdown { background-position: 7px -166px; }
+li#gestures { background: none; }
+
+/* ON/OFF toggle button */
+ul.iphone_ui_list li span.label {
+  float: left;
+  width: 50%;
+  padding-left: 7px;
+}
+
+ul.iphone_ui_list li a.on-off-toggle {
+  display: block;
+  float: right;
+  width: 94px;
+  height: 27px;
+  padding: 0;
+  margin: 8px 8px 0 0;
+  color: transparent;
+  font-size: 0.5em;
+  background-image: url('images/on-off-button.png');
+  background-repeat: no-repeat;
+}
+
+a.off { background-position: 0 0; }
+a.on { background-position: 0 -29px; }
 
 /* landscape mode */
 body.landscape section#controller {
