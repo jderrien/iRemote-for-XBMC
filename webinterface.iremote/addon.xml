@@ -11,7 +11,7 @@
     point="xbmc.gui.webinterface"/>
   <extension point="xbmc.addon.metadata">
     <summary>iRemote for XBMC</summary>
-    <description>iRemote for XBMC is just a simple webapp to control XBMC over HTTP using your iPhone. It now supports gestures since v0.3 (you can tap, swipe up, down, left, right. Tap with two fingers will open the context menu).</description>
+    <description>iRemote for XBMC is just a simple webapp to control XBMC over HTTP using your iPhone. It now supports gestures since v0.3 (you can tap, swipe up, down, left, right. Tap with two fingers will open the context menu), just click on the top right icon and click on the toggle button to active !</description>
     <platform>all</platform>
   </extension>
 </addon>
