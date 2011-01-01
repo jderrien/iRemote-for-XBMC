@@ -11,8 +11,8 @@ iRemote for XBMC is just a simple webapp to control XBMC over HTTP using your iP
     * Go to 'System -> Settings -> Network -> Services'
     * Check 'Allow control of XBMC via HTTP'
     * Port 8080
-    * Select 'iRemote" in "Web interface'
+    * Select 'iRemote" in 'Web interface'
 4.  Start Safari on your iPhone
-    *  Go to 'http://<your_computer>:8080/iremote/'
-    *  Click on the button to add the app to your homescreen
-5.  Launch the app from you homescreen !
+    *  Go to 'http://<your_computer>:8080/'
+    *  Click on the button to add the app to your springboard
+5.  Launch the app from your springboard !
