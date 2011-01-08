@@ -38,7 +38,10 @@
       <h1>iRemote</h1>
       <nav><a href="#actions" id="to_actions" onclick="iPhoneUI.transition(this);">Action List</a></nav>
     </header>
-    <img src="images/controller-cross.png" width="237" height="237" id="controller_img" usemap="#controller_map" class="hidden" />
+    <div id="controller_pad" class="hidden">
+      <a href="#" onclick="XbmcRequest.send('HTTP-API','key','C'); return false;"><img src="images/controller-osd.png" id="controller_osd" /></a>
+      <img src="images/controller-cross.png" width="237" height="237" id="controller_img" usemap="#controller_map" />
+    </div>
     <div id="gestures_logo" class="hidden">&nbsp;</div>
     <ul id="controller_bar">
       <li id="back"><a href="#" onclick="XbmcRequest.send('HTTP-API','key','back'); return false;">Back</a></li>

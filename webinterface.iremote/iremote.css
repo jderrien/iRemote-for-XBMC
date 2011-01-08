@@ -164,6 +164,14 @@ section#controller {
   border: 0;
 }
 
+#controller_osd {
+  position: absolute;
+  top: 65px;
+  left: 18px;
+  border: 0;
+}
+
+
 #gestures_logo {
   width: 100%;
   height: 80%;
@@ -278,6 +286,13 @@ body.landscape #controller_img {
   position: absolute;
   top: 35px;
   left: 118px;
+  border: 0;
+}
+
+body.landscape #controller_osd {
+  position: absolute;
+  top: 60px;
+  left: 40px;
   border: 0;
 }
 

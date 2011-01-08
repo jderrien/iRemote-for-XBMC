@@ -372,14 +372,14 @@ var iRemote = {
   /* Show the controller or the gestures mode logo */
   showController: function(gestures_state) {
     gestures_logo = document.getElementById('gestures_logo');
-    controller_img = document.getElementById('controller_img');
+    controller_pad = document.getElementById('controller_pad');
     
     if(gestures_state == true) {
       removeClass(gestures_logo, 'hidden');
-      addClass(controller_img, 'hidden');
+      addClass(controller_pad, 'hidden');
     }
     else {
-      removeClass(controller_img, 'hidden');
+      removeClass(controller_pad, 'hidden');
       addClass(gestures_logo, 'hidden');
     }
   }
