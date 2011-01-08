@@ -1,3 +1,6 @@
+0.3.1
+- Added : OSD button to the classic controller pad (Context menu)
+
 0.3
 - Added : Gestures (one finger: up, down, left, right, ok ; two fingers: context menu)
 
