@@ -162,7 +162,7 @@ var XbmcRequest = {
 /* iPhoneUI */
 var iPhoneUI = {
   init: function() {
-    if(!window.navigator.standalone) {
+    if((navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) && !window.navigator.standalone) {
       removeClass(document.getElementById('add-to-homescreen'), 'hidden');
     }
     else {
