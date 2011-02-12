@@ -163,6 +163,8 @@ var XbmcRequest = {
 var iPhoneUI = {
   init: function() {
     if((navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) && !window.navigator.standalone) {
+      addClass(document.getElementById('actions'), 'hidden');
+      addClass(document.getElementById('controller'), 'hidden');
       removeClass(document.getElementById('add-to-homescreen'), 'hidden');
     }
     else {
