@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="webinterface.iremote"
-  version="0.3.1"
+  version="0.3.2"
   name="iRemote"
   provider-name="Ishiro">
   <requires>
@@ -11,7 +11,7 @@
     point="xbmc.gui.webinterface"/>
   <extension point="xbmc.addon.metadata">
     <summary>iRemote for XBMC</summary>
-    <description>iRemote for XBMC is just a simple webapp to control XBMC over HTTP using your iPhone. It now supports gestures since v0.3 (you can tap, swipe up, down, left, right. Tap with two fingers will open the context menu), just click on the top right icon and click on the toggle button to active !</description>
+    <description>iRemote for XBMC is just a simple webapp to control XBMC over HTTP using your mobile (iOS or Android). It now supports gestures since v0.3 : go to the settings (top-right corner icon) and tap on the toggle button to active !</description>
     <platform>all</platform>
   </extension>
 </addon>
