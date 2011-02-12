@@ -22,13 +22,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 body {
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
   font-family: Helvetica;
-  /*height: 0;*/ /* strange bug fix */
   background: #000;
+  -webkit-font-smoothing: antialiased;
 }
 
-a, map {
+a, img { border: 0; }
+a, map, img {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -151,7 +151,7 @@ section:target { z-index: 1; display: block; -webkit-transform: translateX(0%); 
 
 /*   Controller   */
 section#controller {
-  background-color: #000;
+  background-color: #3d3d3d;
   background-image: url('images/controller-background.png');
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -165,10 +165,13 @@ section#controller {
 }
 
 #controller_osd {
+  display: block;
   position: absolute;
+  z-index: 1;
   top: 65px;
   left: 18px;
-  border: 0;
+  width: 43px;
+  height: 43px;
 }
 
 
@@ -293,7 +296,6 @@ body.landscape #controller_osd {
   position: absolute;
   top: 60px;
   left: 40px;
-  border: 0;
 }
 
 body.landscape ul#controller_bar {
