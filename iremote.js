@@ -343,17 +343,17 @@ var iRemoteGestures = {
 
 /* iRemote */
 var iRemote = {
-  gestures_state: false,
+  gestures_state: true,
   
   init: function() {
     // Init the gestures mode (listeners, vars)
     iRemoteGestures.init('gestures_logo');
     
     // Init gestures toggle button
-    this.gestures_state = getCookie('gestures') == 'true' ? true : false;
+    this.gestures_state = getCookie('gestures') == 'false' ? false : true;
     iPhoneUI.toggleButton(document.getElementById('gestures_toggle'), this.gestures_state);
     
-    // Show the controller image (or not)
+    // Show the controller image (or not if gesture mode)
     this.showController(this.gestures_state);
   },
   
