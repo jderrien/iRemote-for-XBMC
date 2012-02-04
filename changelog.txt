@@ -1,3 +1,8 @@
+0.4
+- New   : Gestures mode by default
+- Added : Eden support
+- Fixed : Bug during the transition between the main window and the action window
+
 0.3.2
 - Added : Android support
 - Fixed : HTML5 validation
