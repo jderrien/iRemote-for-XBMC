@@ -276,14 +276,14 @@ var iRemoteGestures = {
         // Action only launched if the threshold is exceeded
         if(this.gesture.direction == 'vertical' && (this.gesture._start._y > this.gesture._stop._y) && ((this.gesture._start._y - this.gesture._threshold._y) >= this.gesture._stop._y)) {
           element.gesture.is_scrolling = true;
-          XbmcRequest.send('HTTP-API','key','up'); // Up
-          setTimeout(function() { element.gesture.is_scrolling = false; }, 100);
+          XbmcRequest.send('JSON-RPC','Input.Up'); // Up
+          setTimeout(function() { element.gesture.is_scrolling = false; }, 200);
           this.gesture.triggered = true;
         }
         else if(this.gesture.direction == 'vertical' && (this.gesture._start._y < this.gesture._stop._y) && ((this.gesture._start._y+this.gesture._threshold._y) <= this.gesture._stop._y)) {
           element.gesture.is_scrolling = true;
-          XbmcRequest.send('HTTP-API','key','down'); // Down
-          setTimeout(function() { element.gesture.is_scrolling = false; }, 100);      
+          XbmcRequest.send('JSON-RPC','Input.Down'); // Down
+          setTimeout(function() { element.gesture.is_scrolling = false; }, 200);      
           this.gesture.triggered = true;  
         }
       }
@@ -300,18 +300,18 @@ var iRemoteGestures = {
     if(!this.gesture.triggered && this.gesture.touches==1) {
       // Tap - regular click
       if(this.gesture._start._x == this.gesture._stop._x && this.gesture._start._y == this.gesture._stop._y) {
-        XbmcRequest.send('HTTP-API','key','enter'); // Ok
+        XbmcRequest.send('JSON-RPC','Input.Select'); // Ok
       }
       // Gesture
       else {
         if(this.gesture.direction == 'horizontal' && (this.gesture._start._x > this.gesture._stop._x) && ((this.gesture._start._x - this.gesture._threshold._x) >= this.gesture._stop._x)) {
-          XbmcRequest.send('HTTP-API','key','left'); // Left
+          XbmcRequest.send('JSON-RPC','Input.Left'); // Left
         }
         else if(this.gesture.direction == 'horizontal' && (this.gesture._start._x < this.gesture._stop._x) && ((this.gesture._start._x+this.gesture._threshold._x) <= this.gesture._stop._x)) {
-          XbmcRequest.send('HTTP-API','key','right'); // Right
+          XbmcRequest.send('JSON-RPC','Input.Right'); // Right
         }
         else {
-          XbmcRequest.send('HTTP-API','key','enter'); // Ok
+          XbmcRequest.send('JSON-RPC','Input.Select'); // Ok
         }
       }
     }
