@@ -1,4 +1,4 @@
-# iRemote for XBMC
+# iRemote for XBMC Dharma
 
 iRemote for XBMC is just a simple webapp to control XBMC over HTTP using your iPhone.
 
